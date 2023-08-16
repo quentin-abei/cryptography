@@ -12,8 +12,15 @@ function xorBuffers(buffer1, buffer2){
     const finalResult = result.toString("hex");
     return finalResult;
 }
-const buf1 = Buffer.from("1c0111001f010100061a024b53535009181c", "hex");
-const buf2 = Buffer.from("686974207468652062756c6c277320657965", "hex");
 
-const xor = xorBuffers(buf1, buf2);
-console.log(xor);
+function callXor(hex1, hex2) {
+    const buf1 = Buffer.from(hex1, "hex");
+    const buf2 = Buffer.from(hex2, "hex");
+    const xor = xorBuffers(buf1, buf2);
+    return xor;
+}
+
+let hex1 = "1c0111001f010100061a024b53535009181c";
+let hex2 = "686974207468652062756c6c277320657965"
+const r = callXor(hex1, hex2 );
+console.log("callXor return", r);
