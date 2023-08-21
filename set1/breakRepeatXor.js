@@ -18,3 +18,8 @@ function calculateHammingBytes(string1, string2) {
     console.log(hammingDistance);
     return hammingDistance;
 }
+
+function findLikelyKeySize(encryptedBase64) {
+    const bytesArray = atob(encryptedBase64).split("").map(char => char.charCodeAt(0));
+    
+}
